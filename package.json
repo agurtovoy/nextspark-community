@@ -1,0 +1,40 @@
+{
+  "name": "nextspark-community",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "config": "^1.24.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.3.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-sitemap": "^1.6.5",
+    "jquery": "^3.1.1",
+    "jsonfile": "^2.4.0",
+    "lodash": "^4.17.1",
+    "mem": "^1.1.0",
+    "moment": "^2.16.0",
+    "morgan": "^1.7.0",
+    "nodemailer": "^2.6.4",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "serve-favicon": "^2.3.0",
+    "stickyfill": "^1.1.1",
+    "throttle-debounce": "^1.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "image-webpack-loader": "^3.0.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-manifest-plugin": "^1.1.0"
+  }
+}

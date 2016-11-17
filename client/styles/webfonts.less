@@ -1,0 +1,32 @@
+.fontface( @family, @filename, @weight, @style: normal ) {
+    @font-face {
+        font-family: @family;
+        src: url('../fonts/@{filename}.eot'); /* IE9 Compat Modes */
+        src: url('../fonts/@{filename}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('../fonts/@{filename}.woff2') format('woff2'), /* Modern Browsers */
+             url('../fonts/@{filename}.woff') format('woff'), /* Modern Browsers */
+             url('../fonts/@{filename}.ttf') format('truetype');
+        font-weight: @weight;
+        font-style: @style;
+        text-rendering: optimizeLegibility;
+    }
+}
+
+.fontface( 'Lato', 'LatoLatin-Hairline', 100 );
+.fontface( 'Lato', 'LatoLatin-HairlineItalic', 100, italic );
+.fontface( 'Lato', 'LatoLatin-Thin', 200 );
+.fontface( 'Lato', 'LatoLatin-ThinItalic', 200, italic );
+.fontface( 'Lato', 'LatoLatin-Light', 300 );
+.fontface( 'Lato', 'LatoLatin-LightItalic', 300, italic );
+.fontface( 'Lato', 'LatoLatin-Regular', 400 );
+.fontface( 'Lato', 'LatoLatin-Italic', 400, italic );
+.fontface( 'Lato', 'LatoLatin-Medium', 500 );
+.fontface( 'Lato', 'LatoLatin-MediumItalic', 500, italic );
+.fontface( 'Lato', 'LatoLatin-Semibold', 600 );
+.fontface( 'Lato', 'LatoLatin-SemiboldItalic', 600, italic );
+.fontface( 'Lato', 'LatoLatin-Bold', 700 );
+.fontface( 'Lato', 'LatoLatin-BoldItalic', 700, italic );
+.fontface( 'Lato', 'LatoLatin-Heavy', 800 );
+.fontface( 'Lato', 'LatoLatin-HeavyItalic', 800, italic );
+.fontface( 'Lato', 'LatoLatin-Black', 900 );
+.fontface( 'Lato', 'LatoLatin-BlackItalic', 900, italic );
