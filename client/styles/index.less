@@ -1,10 +1,10 @@
-.page-index {
+.index-main {
     background-color: @brand-color-primary;
     color: white;
 }
 
 .index-header {
-    padding: 7.5rem 2rem;
+    padding: 7.5rem 2rem 2rem;
     text-align: center;
 }
 
@@ -21,6 +21,84 @@
     line-height: 1.2;
     width: 35rem;
 }
+
+.index-main {
+    *, *:after, *:before {
+        box-sizing: border-box;
+    }
+}
+
+.index-section {
+    width: 100%;
+    overflow: hidden;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.index-column {
+    position: relative;
+    float: left;
+}
+
+
+.index-leading-cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+@index-column-inset: 5rem;
+
+.index-left-column {
+    width: 45%; // fallback
+    width: calc( ~"50% - @{index-column-inset}" );
+}
+
+.index-right-column {
+    width: 55%; // fallback
+    width: calc( ~"50% + @{index-column-inset}" );
+}
+
+
+.index-leading-cta-form-container {
+    text-align: center;
+    max-width: 24rem;
+    margin: 0 2.5rem;
+    float: right;
+}
+
+.index-leading-cta-text {
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+
+.index-leading-cta-screenshot-container {
+    position: relative;
+    margin: 4rem;
+    padding-bottom: 57%;
+    min-width: 70rem;
+    min-height: 40rem;
+    max-width: 90rem;
+}
+
+.index-leading-cta-screenshot {
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0.7rem 1rem rgba(0, 0, 0, 0.2));
+    // Safari 7.1+, workaround for incorrect drop-shadow rendering
+    _::-webkit-full-page-media, _:future, :root & {
+        filter: drop-shadow(0 0.6rem 2.5rem rgba(0, 0, 0, 0.2));
+    }
+}
+
 
 
 @media screen and (min-width: @pure-min-width-sm) {

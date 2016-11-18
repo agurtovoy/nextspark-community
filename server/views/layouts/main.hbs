@@ -24,11 +24,11 @@
     <![endif]-->
     {{> analytics}}
 </head>
-<body class="page-{{pageName}}">
+<body class="{{pageName}}-body">
 {{> header}}
-<div class="content-container">
+<main class="main-container {{pageName}}-main">
   {{{body}}}
-</div>
+</main>
 {{> footer}}
 </body>
 </html>
