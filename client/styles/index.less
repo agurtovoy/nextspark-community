@@ -10,8 +10,6 @@
 
 .index-header-title {
     text-transform: uppercase;
-    line-height: 1;
-    margin: 0;
 }
 
 .index-header-subtitle {
@@ -30,7 +28,6 @@
 
 .index-section {
     width: 100%;
-    overflow: hidden;
     &:after {
         content: "";
         display: table;
@@ -38,42 +35,58 @@
     }
 }
 
-.index-column {
-    position: relative;
-    float: left;
+
+.index-section-title {
+}
+
+.index-section-text {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 1.8rem 0 0;
 }
 
 
-.index-leading-cta {
+.index-column {
+    position: relative;
+    float: left;
+    min-height: 1px;
+}
+
+
+.index-section-leading-cta {
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 0 0 2rem;
 }
 
 
 @index-column-inset: 5rem;
 
-.index-left-column {
+.index-slim-column {
     width: 45%; // fallback
     width: calc( ~"50% - @{index-column-inset}" );
 }
 
-.index-right-column {
+.index-wide-column {
     width: 55%; // fallback
     width: calc( ~"50% + @{index-column-inset}" );
 }
 
 
+@index-slim-column-content-width: 24rem;
+
+
 .index-leading-cta-form-container {
     text-align: center;
-    max-width: 24rem;
+    max-width: @index-slim-column-content-width;
     margin: 0 2.5rem;
     float: right;
 }
 
 .index-leading-cta-text {
-    font-size: 1.5rem;
-    line-height: 1.25;
+    .index-section-text;
     margin: 0 0 2.5rem;
 }
 
@@ -134,4 +147,54 @@
     &:hover {
         border-bottom: 1px solid white;
     }
+}
+
+.index-text-column-container {
+    max-width: 42rem;
+    margin: 4rem 0;
+}
+
+.section-beak(@color) {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 5rem;
+    border-left-width: 5rem;
+    border-bottom: 1.5rem solid @color;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.index-column-beak {
+    position: relative;
+    width: @index-slim-column-content-width;
+    margin: 0 2.5rem;
+    float: right;
+    .section-beak(@brand-color-red);
+}
+
+.index-section-share-experience {
+    background-color: @brand-color-red;
+    // filter: drop-shadow(0 -0.1rem 1rem rgba(0, 0, 0, 0.15));
+}
+
+
+.index-share-experience-image {
+//    padding-bottom: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+
+.index-section-build-connections {
+    background-color: @brand-color-purple;
+}
+
+.index-section-get-the-help {
+    background-color: @brand-color-green;
 }
