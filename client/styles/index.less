@@ -74,7 +74,7 @@
 .index-leading-cta-text {
     font-size: 1.5rem;
     line-height: 1.25;
-    margin: 2rem 0;
+    margin: 0 0 2.5rem;
 }
 
 
@@ -103,6 +103,7 @@
 
 .index-large-cta-button {
   display: inline-block;
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
@@ -111,11 +112,31 @@
   white-space: nowrap;
   color: white;
   border-radius: 4px;
-  padding: 1.3rem 2.4rem;
+  padding: 1.1rem 2rem;
   background-color: @brand-color-green;
-  box-shadow:
-    0px 4px 0px 0px darken(@brand-color-green, 8%),
-    0 0.2rem 0.8rem 0.1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 0 0 darken(@brand-color-green, 8%);
+  transition: all .15s ease-in-out;
+
+  &:active {
+    transform: translate(0px, 2px);
+    box-shadow: 0 2px 0 0 darken(@brand-color-green, 8%);
+  }
 }
 
 
+.index-large-cta-button-hint {
+    font-size: 1.1rem;
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+.index-large-cta-button-hint-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.2rem;
+    border-bottom: 1px solid transparent;
+    transition: all .15s ease-in-out;
+    &:hover {
+        border-bottom: 1px solid white;
+    }
+}
