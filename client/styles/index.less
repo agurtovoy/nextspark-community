@@ -28,11 +28,18 @@
 
 .index-section {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     &:after {
         content: "";
         display: table;
         clear: both;
     }
+}
+
+.index-section-separator {
+    .index-section;
 }
 
 
@@ -48,16 +55,12 @@
 
 .index-column {
     position: relative;
-    float: left;
-    min-height: 1px;
+    display: table-cell;
 }
 
 
 .index-section-leading-cta {
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     margin: 0 0 2rem;
 }
 
@@ -67,6 +70,7 @@
 .index-slim-column {
     width: 45%; // fallback
     width: calc( ~"50% - @{index-column-inset}" );
+    padding: 0 2.5rem;
 }
 
 .index-wide-column {
@@ -81,7 +85,6 @@
 .index-leading-cta-form-container {
     text-align: center;
     max-width: @index-slim-column-content-width;
-    margin: 0 2.5rem;
     float: right;
 }
 
@@ -152,9 +155,10 @@
 }
 
 .index-text-column-container {
-    max-width: 42rem;
-    margin: 4rem 0;
+    max-width: 35rem;
+    margin: 4rem 2rem;
 }
+
 
 .section-beak(@color) {
   &:before {
@@ -172,31 +176,47 @@
   }
 }
 
-.index-column-beak {
-    position: relative;
-    width: @index-slim-column-content-width;
-    margin: 0 2.5rem;
-    float: right;
+.index-column-beak-red {
+    .u-pull-right;
     .section-beak(@brand-color-red);
 }
 
-.index-section-share-experience {
-    background-color: @brand-color-red;
-    // filter: drop-shadow(0 -0.1rem 1rem rgba(0, 0, 0, 0.15));
+.index-section-separator-purple {
+    flex-direction: row-reverse;
+}
+
+.index-column-beak-purple {
+    .section-beak(@brand-color-purple);
+}
+
+.index-column-beak-green {
+    .u-pull-right;
+    .section-beak(@brand-color-green);
 }
 
 
-.index-share-experience-image {
-//    padding-bottom: 50%;
-    height: 100%;
+.index-image-column-container {
+    position: relative;
+    max-width: @index-slim-column-content-width;
     width: 100%;
+    height: 100%;
 }
 
 
-.index-section-build-connections {
-    background-color: @brand-color-purple;
+.index-image-share-experience {
+    .icon-def( "../images/knowledge-vs-experience.svg" );
+    margin: 0 1rem;
+    padding-bottom: 70%;
 }
 
-.index-section-get-the-help {
-    background-color: @brand-color-green;
+.index-image-building-connections {
+    .icon-def( "../images/building-connections.svg" );
+    margin: 0 2rem;
+    padding-bottom: 70%;
+}
+
+.index-image-get-the-answers {
+    .icon-def( "../images/get-the-answers.svg" );
+    margin: 0 3rem;
+    padding-bottom: 70%;
 }

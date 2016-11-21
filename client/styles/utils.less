@@ -24,9 +24,29 @@
     }
 }
 
+
+.if-min-width( @rules, @min-width ) {
+    @media screen and (min-width: @min-width) {
+        @rules();
+    };
+}
+
+.if-md( @rules ) { .if-min-width( @rules, 48rem ); }
+.if-lg( @rules ) { .if-min-width( @rules, 64rem ); }
+
+
+.u-background-red       { background-color: @brand-color-red; }
+.u-background-purple    { background-color: @brand-color-purple; }
+.u-background-green     { background-color: @brand-color-green; }
+
+
 .u-nowrap {
     white-space: nowrap;
 }
+
+.u-nowrap-md { .if-md( { .u-nowrap; } ); }
+.u-nowrap-lg { .if-lg( { .u-nowrap; } ); }
+
 
 .u-right-aligned {
     text-align: right;
